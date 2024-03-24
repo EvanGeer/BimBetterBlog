@@ -1,0 +1,11 @@
+﻿<Project>
+  
+  <PropertyGroup>
+    <RevitYear>2022</RevitYear>
+    <TargetFramework>net481</TargetFramework>
+  </PropertyGroup>
+
+  <!-- The base project should contain all the stuff that's the same between projects -->
+  <Import Project="SampleProject.csproj" />
+
+</Project>
