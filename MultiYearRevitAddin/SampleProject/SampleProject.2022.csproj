@@ -5,7 +5,7 @@
     <TargetFramework>net481</TargetFramework>
   </PropertyGroup>
 
-  <!-- The base project should contain all the stuff that's the same between projects -->
-  <Import Project="SampleProject.csproj" />
+  <Import Project=".csproj/SampleProject.paths" />
+  <Import Project=".csproj/SampleProject.base" />
 
 </Project>

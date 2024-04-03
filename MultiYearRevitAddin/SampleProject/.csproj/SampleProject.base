@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Common Properties -->
+  <PropertyGroup>
+    <RootNamespace>SampleProject</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <!-- Needed to remove obj file from compiling -->
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <!-- Abstracted Properties-->
+  <!-- Configurations/Defined Pre-compiler Flags -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);RV$(RevitYear)</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);RV$(RevitYear)</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Revit API References -->
+  <!-- ToDo: update to your project path -->
+  <ItemGroup>
+    <Reference Include="AdWindows">
+      <HintPath>..\dependencies\$(RevitYear)\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\dependencies\$(RevitYear)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\dependencies\$(RevitYear)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
